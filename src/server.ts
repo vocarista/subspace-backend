@@ -92,7 +92,7 @@ app.get('/api/blog-search', async (req: any, res: any) => {
 // Function to ping an external server to keep it active
 const pingServer = async () => {
     try {
-        await axios.get('https://api.main.vocarista.com');
+        await axios.get('https://api.subspace.vocarista.com');
     } catch (error: any) {
         console.error('Error pinging the server:', error.message);
     }

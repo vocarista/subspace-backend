@@ -105,7 +105,7 @@ This documentation describes the structure and functionality of a Node.js applic
 
 #### `pingServer(): void`
 
-- Description: This function sends a ping request to an external server (https://api.main.vocarista.com) to keep it active.
+- Description: This function sends a ping request to this server (https://api.subspace.vocarista.com) to keep it active.
 - Interval: Ping is sent every 14 minutes (interval defined by `pingInterval`).
 
 #### `/` (GET)
