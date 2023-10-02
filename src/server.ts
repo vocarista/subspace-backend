@@ -77,6 +77,17 @@ app.get('/api/blog-search', async(req: any, res: any) => {
     }
 })
 
+const pingServer = async () => {
+    try {
+        await axios.get('https://api.main.vocarista.com');
+    } catch (error: any) {
+        console.error('Error pinging the server:', error.message);
+    }
+};
+
+const pingInterval = 1000 * 60 * 14;
+setInterval(pingServer, pingInterval);
+
 app.get('/', (req: any, res: any) => {
     res.send('Server active');
 })
