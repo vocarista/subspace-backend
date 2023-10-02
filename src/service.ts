@@ -1,6 +1,8 @@
+// service.ts
 const lodash = require('lodash');
 
-function getLongestTitle (blogs: Array<any>): string {
+// Function to get the title of the longest blog post
+function getLongestTitle(blogs: Array<any>): string {
     let title: string = '';
     let length: number = 0;
     blogs.forEach((blog: any) => {
@@ -12,7 +14,8 @@ function getLongestTitle (blogs: Array<any>): string {
     return title;
 }
 
-function getNoTitlesWithPrivacy (blogs: Array<any>): number {
+// Function to count the number of blog posts with "privacy" in their titles
+function getNoTitlesWithPrivacy(blogs: Array<any>): number {
     let noBlogsPrivacy: number = 0;
     blogs.forEach((blog: any) => {
         if (lodash.includes(lodash.toLower(blog.title), 'privacy')) {
@@ -22,20 +25,22 @@ function getNoTitlesWithPrivacy (blogs: Array<any>): number {
     return noBlogsPrivacy;
 }
 
-function getUniqueBlogTitles (blogs: Array<any>): Array<any> {
+// Function to get an array of unique blog titles
+function getUniqueBlogTitles(blogs: Array<any>): Array<any> {
     let uniqueArray: Array<string> = []
     const titleSet = new Set<string>();
     blogs.forEach((blog: any) => {
         const title = lodash.toLower(blog.title)
         if (!titleSet.has(title)) {
-            uniqueArray.push(title);
+            uniqueArray.push(blog.title);
             titleSet.add(title);
         }
     })
     return uniqueArray;
 }
 
-export function processData (data: Array<any>): any {
+// Function to process data and return statistics
+export function processData(data: Array<any>): any {
     const longest_title: string = getLongestTitle(data);
     const titles_with_privacy: number = getNoTitlesWithPrivacy(data);
     const unique_blog_titles: Array<string> = getUniqueBlogTitles(data);
@@ -47,7 +52,8 @@ export function processData (data: Array<any>): any {
     }
 }
 
-export function getQueriedBlogs (blogs: Array<any>, queryTitle: string): Array<any> {
+// Function to get blog posts that match a query title
+export function getQueriedBlogs(blogs: Array<any>, queryTitle: string): Array<any> {
     let queriedBlogs: Array<any> = []
     blogs.forEach((blog: any) => {
         let title = lodash.toLower(blog.title);
