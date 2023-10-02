@@ -2,7 +2,7 @@
 
 ## Overview
 
-This documentation describes the structure and functionality of a Node.js application consisting of two main files, `service.ts` and `server.ts`. The application fetches data from an external API, processes it, and exposes two API endpoints for querying statistics and searching blogs. `The comments in the code and this documentation have been generated using ChatGPT.`
+This documentation describes the structure and functionality of this Node.js application consisting of two main files, `service.ts` and `server.ts`. The application fetches data from an external API, processes it, and exposes two API endpoints for querying statistics and searching blogs. `The comments in the code and this documentation have been generated using ChatGPT.`
 
 ## service.ts
 
