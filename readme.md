@@ -115,7 +115,7 @@ This documentation describes the structure and functionality of this Node.js app
 ### Server Initialization
 
 - The server is initialized to listen on a specified port (default is 3000).
-- A ping request is sent to an external server at regular intervals to keep it active.
+- A ping request is sent to this server at regular intervals to keep it active.
 
 ## Running the Application
 
